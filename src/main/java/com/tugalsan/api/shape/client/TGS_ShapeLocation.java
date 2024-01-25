@@ -5,6 +5,7 @@ public class TGS_ShapeLocation<T> {
     public T x;
     public T y;
 
+    @Override
     public String toString() {
         return TGS_ShapeLocation.class.getSimpleName() + "{x/y: " + x + "/" + y + "}";
     }
@@ -17,12 +18,12 @@ public class TGS_ShapeLocation<T> {
         sniffFrom(position);
     }
 
-    public void sniffFrom(TGS_ShapeLocation<T> position) {
+    final public void sniffFrom(TGS_ShapeLocation<T> position) {
         this.x = position.x;
         this.y = position.y;
     }
 
-    public void set(T x, T y) {
+    final public void set(T x, T y) {
         this.x = x;
         this.y = y;
     }

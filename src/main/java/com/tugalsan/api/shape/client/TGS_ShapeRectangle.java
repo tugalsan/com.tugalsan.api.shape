@@ -11,6 +11,7 @@ public class TGS_ShapeRectangle<T> {
         this(position.x, position.y, dimension.width, dimension.height);
     }
 
+    @Override
     public String toString() {
         return TGS_ShapeRectangle.class.getSimpleName() + "{x/y/width/height: " + x + "/" + y + "/" + width + "/" + height + "}";
     }
@@ -27,14 +28,14 @@ public class TGS_ShapeRectangle<T> {
         sniffFrom(position);
     }
 
-    public void sniffFrom(TGS_ShapeRectangle<T> position) {
+    final public void sniffFrom(TGS_ShapeRectangle<T> position) {
         this.x = position.x;
         this.y = position.y;
         this.width = position.width;
         this.height = position.height;
     }
 
-    public void set(T x, T y, T width, T height) {
+    final public void set(T x, T y, T width, T height) {
         this.x = x;
         this.y = y;
         this.width = width;
