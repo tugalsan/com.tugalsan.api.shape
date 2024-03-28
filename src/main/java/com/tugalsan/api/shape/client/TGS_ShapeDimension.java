@@ -18,6 +18,10 @@ public class TGS_ShapeDimension<T> {
         sniffFrom(dimension);
     }
 
+    public static <T> TGS_ShapeDimension<T> of(T width, T height) {
+        return new TGS_ShapeDimension(width, height);
+    }
+
     final public TGS_ShapeDimension<T> sniffFrom(TGS_ShapeDimension<T> dimension) {
         this.width = dimension.width;
         this.height = dimension.height;
