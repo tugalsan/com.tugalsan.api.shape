@@ -15,17 +15,25 @@ public class TGS_ShapeRectangle<T> {
         return new TGS_ShapeRectangle(position, dimension);
     }
 
-    @Override
-    public String toString() {
-        return TGS_ShapeRectangle.class.getSimpleName() + "{x/y/width/height: " + x + "/" + y + "/" + width + "/" + height + "}";
-    }
-
-    public TGS_ShapeRectangle() {
+    private TGS_ShapeRectangle() {
         this(null, null, null, null);
     }
 
-    public TGS_ShapeRectangle(T x, T y, T width, T height) {
+    public static <T> TGS_ShapeRectangle<T> of() {
+        return new TGS_ShapeRectangle();
+    }
+
+    private TGS_ShapeRectangle(T x, T y, T width, T height) {
         set(x, y, width, height);
+    }
+
+    public static <T> TGS_ShapeRectangle<T> of(T x, T y, T width, T height) {
+        return new TGS_ShapeRectangle(x, y, width, height);
+    }
+
+    @Override
+    public String toString() {
+        return TGS_ShapeRectangle.class.getSimpleName() + "{x/y/width/height: " + x + "/" + y + "/" + width + "/" + height + "}";
     }
 
     public TGS_ShapeRectangle(TGS_ShapeRectangle<T> position) {
