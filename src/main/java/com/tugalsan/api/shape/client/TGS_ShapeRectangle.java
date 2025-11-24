@@ -7,8 +7,12 @@ public class TGS_ShapeRectangle<T> {
     public T width;
     public T height;
 
-    public TGS_ShapeRectangle(TGS_ShapeLocation<T> position, TGS_ShapeDimension<T> dimension) {
+    private TGS_ShapeRectangle(TGS_ShapeLocation<T> position, TGS_ShapeDimension<T> dimension) {
         this(position.x, position.y, dimension.width, dimension.height);
+    }
+
+    public static <T> TGS_ShapeRectangle<T> of(TGS_ShapeLocation<T> position, TGS_ShapeDimension<T> dimension) {
+        return new TGS_ShapeRectangle(position, dimension);
     }
 
     @Override
