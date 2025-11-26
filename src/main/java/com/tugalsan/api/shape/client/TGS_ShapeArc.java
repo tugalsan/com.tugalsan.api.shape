@@ -8,17 +8,17 @@ public class TGS_ShapeArc<T, Y, Z> {
     public Z angleInDegrees_start;
     public Z angleInDegrees_end;
 
-    public TGS_ShapeArc(TGS_ShapeLocation<T> position, Y radius, TGS_ShapeLocation<Z> angleInDegrees) {
+    private TGS_ShapeArc(TGS_ShapeLocation<T> position, Y radius, TGS_ShapeLocation<Z> angleInDegrees) {
         this(position.x, position.y, radius, angleInDegrees.x, angleInDegrees.y);
+    }
+
+    public static <T, Y, Z> TGS_ShapeArc<T, Y, Z> of(TGS_ShapeLocation<T> position, Y radius, TGS_ShapeLocation<Z> angleInDegrees) {
+        return new TGS_ShapeArc(position, radius, angleInDegrees);
     }
 
     @Override
     public String toString() {
         return TGS_ShapeArc.class.getSimpleName() + "{x/y/radius/angleInDegrees_start/angleInDegrees_end: " + x + "/" + y + "/" + radius + "/" + angleInDegrees_start + "/" + angleInDegrees_end + "}";
-    }
-
-    public TGS_ShapeArc() {
-        this(null, null, null, null, null);
     }
 
     public TGS_ShapeArc(T x, T y, Y radius, Z angleInDegrees_start, Z angleInDegrees_end) {
