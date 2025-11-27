@@ -14,13 +14,21 @@ public class TGS_ShapeLocation<T> {
         set(x, y);
     }
 
-    public TGS_ShapeLocation(TGS_ShapeLocation<T> position) {
+    private TGS_ShapeLocation(TGS_ShapeLocation<T> position) {
         sniffFrom(position);
+    }
+
+    public static <T> TGS_ShapeLocation<T> of(T x, T y) {
+        return new TGS_ShapeLocation(x, y);
     }
 
     final public void sniffFrom(TGS_ShapeLocation<T> position) {
         this.x = position.x;
         this.y = position.y;
+    }
+
+    public TGS_ShapeLocation<T> cloneIt(TGS_ShapeLocation<T> position) {
+        return of(position.x, position.y);
     }
 
     final public void set(T x, T y) {
